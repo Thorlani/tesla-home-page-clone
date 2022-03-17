@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.tesla {
+    width: 100px;
+    object-fit: contain;
+}
+
+.container .first nav {
+    position: fixed;
+    top: -.2rem;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 18px;
+}
+
+.touch {
+    position: relative;
+    z-index: 1;
+    top: 8rem;
+}
+
+
+.first {
+    background-image: url(./images/image-3.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.second {
+    background-image: url(./images/image-1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.third {
+    background-image: url(./images/image-4.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.fourth {
+    background-image: url(./images/image-2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+nav .first-navbar {
+    display: flex;
+}
+
+nav .first-navbar li {
+    list-style: none;
+}
+
+nav .navbar {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .first-navbar li a .secondpart {
+    padding-left: 4rem;
+}
+
+nav .first-navbar li a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #111;
+}
+
+nav .second-navbar {
+    display: flex;
+}
+
+nav .second-navbar li {
+    list-style: none;
+}
+
+nav .second-navbar li a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: #111;
+}
+
+.menu-icon {
+    display: none;
+    margin-top: -.5rem;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    transition: 0.4s ease;
+}
+
+.touch {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.touch p {
+    margin-top: .5rem;
+}
+
+.touch p span {
+    text-decoration: underline;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 29rem;
+}
+
+.buttons button {
+    margin-left: 2rem;
+}
+
+.buttons .light {
+    padding: 14px 60px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(51, 51, 51, 0.5);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.buttons .dark {
+    padding: 14px 44px;
+    border: none;
+    border-radius: 30px;
+    font-size: 12px;
+    /* font-weight: bold; */
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+        .navbar {
+        position: absolute;
+        margin-top: -4rem;
+        right: 0px;
+        height: 100vh;
+        top: 8vh;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .navbar .first-navbar {
+        display: block;
+    }
+
+    nav .first-navbar li {
+        padding-top: 20px;
+    }
+
+    .navbar .second-navbar {
+        display: block;
+    }
+
+    nav .second-navbar li {
+        padding-top: 20px;
+    }
+/* 
+    .first-navbar li {
+        height: 100vh;
+    } */
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar-active {
+        transform: translateX(0%);
+    }
+
+    .menu-icon-active .top {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon-active .middle {
+        opacity: 0;
+    }
+
+    .menu-icon-active .bottom {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 28rem;
+        margin-left: -14px;
+    }
+
+    .buttons button {
+        width: 90%;
+        margin-top: 15px;
+    }
+}
